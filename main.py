@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os 
 import numpy as np
 from roboticstoolbox.robot.Robot import Robot
 from math import pi
@@ -13,9 +14,7 @@ class MyCobot(Robot):
 
     def __init__(self):
 
-        links, name, urdf_string, urdf_filepath = self.URDF_read(
-            "/home/toys/mycobot/URDF/new_mycobot_pro_320.urdf"
-        )
+        links, name, urdf_string, urdf_filepath = self.URDF_read(os.path.join(os.path.dirname(__file__), "URDF/new_mycobot_pro_320.urdf"))
 
         super().__init__(
             links,

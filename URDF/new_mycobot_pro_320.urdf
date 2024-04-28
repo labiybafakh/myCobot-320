@@ -3,17 +3,16 @@
 	
 <xacro:property name="width" value=".2" />
 
-
   <link name="base">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/base.dae"/>
+       <mesh filename="base.dae"/>
       </geometry>
     <origin xyz = "0.0 0 0 " rpy = " 0 0 1.5708"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/base.dae"/>
+       <mesh filename="base.dae"/>
         </geometry>
         <origin xyz = "0.0 0 0 " rpy = " 0 0 1.5708"/>
     </collision>
@@ -22,14 +21,14 @@
   <link name="link1">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link1.dae"/>
+       <mesh filename="link1.dae"/>
       </geometry>
 
     <origin xyz = "0.0 0.0 -0.078 " rpy = " 0 0 1.5708"/>
     </visual>
     <collision>
      <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link1.dae"/>
+       <mesh filename="link1.dae"/>
       </geometry>
      <origin xyz = "0.0 0.0 -0.078 " rpy = " 0 0 1.5708"/>
     </collision>
@@ -40,13 +39,13 @@
     <visual>
       <geometry>
        
-       <mesh filename="/home/toys/mycobot/URDF/link2.dae"/>
+       <mesh filename="link2.dae"/>
       </geometry>
        <origin xyz = "0.0 0.0 -0.04 " rpy = " 0 1.5708 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link2.dae"/>
+       <mesh filename="link2.dae"/>
       </geometry>
        <origin xyz = "0.0 0.0 -0.04 " rpy = " 0 1.5708 0"/>
     </collision>
@@ -56,13 +55,13 @@
   <link name="link3">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link3.dae"/>
+       <mesh filename="link3.dae"/>
       </geometry>
     <origin xyz = "0.0 0.0 0.039 " rpy = " 1.5708 1.5708 1.5708"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link3.dae"/>
+       <mesh filename="link3.dae"/>
       </geometry>
       <origin xyz = "0.0 0.0 0.039 " rpy = " 1.5708 1.5708 1.5708"/>
     </collision>
@@ -72,13 +71,13 @@
   <link name="link4">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link4.dae"/>
+       <mesh filename="link4.dae"/>
       </geometry>
          <origin xyz = "0.0 -0.0024 -0.05" rpy = " 1.5708 1.5708 0"/>
     </visual>
     <collision>
        <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link4.dae"/>
+       <mesh filename="link4.dae"/>
       </geometry>
        <origin xyz = "0.0 -0.0024 -0.05" rpy = " 1.5708 1.5708 0"/>
     </collision>
@@ -88,13 +87,13 @@
   <link name="link5">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link5.dae"/>
+       <mesh filename="link5.dae"/>
       </geometry>
     <origin xyz = "0.0 0.0 -0.05 " rpy = " 0  0 -1.5708"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link5.dae"/>
+       <mesh filename="link5.dae"/>
       </geometry>
     <origin xyz = "0.0 0.0 -0.05 " rpy = " 0  0 -1.5708"/>
     </collision>
@@ -104,13 +103,13 @@
   <link name="link6">
     <visual>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link6.dae"/>
+       <mesh filename="link6.dae"/>
       </geometry>
      <origin xyz = "0.0 0.0 -0.0115 " rpy = " 1.5708 1.5708 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="/home/toys/mycobot/URDF/link6.dae"/>
+       <mesh filename="link6.dae"/>
       </geometry>
     <origin xyz = "0.0 0.0 -0.0115 " rpy = " 1.5708 1.5708 0"/>
     </collision>
