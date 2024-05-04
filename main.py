@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import numpy as np
 from roboticstoolbox.robot.Robot import Robot
 from math import pi
@@ -14,7 +15,10 @@ class MyCobot(Robot):
     def __init__(self):
 
         links, name, urdf_string, urdf_filepath = self.URDF_read(
-            "/home/toys/mycobot/URDF/new_mycobot_pro_320.urdf"
+            file_path=os.path.join(
+                os.path.dirname(__file__), "URDF/new_mycobot_pro_320.urdf"
+            ),
+            tld=os.path.join(os.path.dirname(__file__), "URDF"),
         )
 
         super().__init__(
@@ -35,22 +39,25 @@ class MyCobot(Robot):
 
 if __name__ == "__main__":  # pragma nocover
 
-    # env = swift.Swift()
-    # env.launch(realtime=True)
+    env = swift.Swift()
+    env.launch(realtime=True)
     robot = MyCobot()
+
+    env.add(robot)
 
     print(robot)
 
-    # robot.q = robot.qr
+    robot.q = (0.0, 0.785, 0.785, 1.57, 0.0, 0.0)
 
-    # Tep = robot.fkine(robot.q) * sm.SE3.Trans(0.2, 0.2, 0.45)
-    # arrived = False
-    # env.add(robot)
+    env.step()
 
-    # dt = 0.05
+    Tep = robot.fkine(robot.q) * sm.SE3.Trans(0.1, 0.1, 0.1)
+    arrived = False
+    env.add(robot)
 
-    # while not arrived:
+    dt = 0.05
 
-    #     v, arrived = rtb.p_servo(robot.fkine(robot.q), Tep, 1)
-    #     robot.qd = np.linalg.pinv(robot.jacobe(robot.q)) @ v
-    #     env.step(dt)
+    while not arrived:
+        v, arrived = rtb.p_servo(robot.fkine(robot.q), Tep, 1)
+        robot.qd = np.linalg.pinv(robot.jacobe(robot.q)) @ v
+        env.step(dt)
