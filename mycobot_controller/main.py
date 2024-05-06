@@ -13,7 +13,6 @@ import roboticstoolbox as rtb
 class MyCobot(Robot):
 
     def __init__(self):
-
         links, name, urdf_string, urdf_filepath = self.URDF_read(
             file_path=os.path.join(
                 os.path.dirname(__file__), "URDF/new_mycobot_pro_320.urdf"
@@ -55,7 +54,7 @@ if __name__ == "__main__":  # pragma nocover
     arrived = False
     env.add(robot)
 
-    dt = 0.05
+    dt = 0.005
 
     while not arrived:
         v, arrived = rtb.p_servo(robot.fkine(robot.q), Tep, 1)
